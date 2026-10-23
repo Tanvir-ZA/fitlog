@@ -18,12 +18,12 @@ export default function MyPlan() {
 
   const workouts = activeTab === 'plan' ? plan : saved
 
-  const totalMinutes = plan.reduce(
+  const totalMinutes = workouts.reduce(
     (total, workout) => total + Number(workout.duration || 0),
     0
   )
 
-  const totalCalories = plan.reduce(
+  const totalCalories = workouts.reduce(
     (total, workout) => total + Number(workout.caloriesBurned || 0),
     0
   )
